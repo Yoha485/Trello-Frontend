@@ -5,14 +5,14 @@ import App from "./App";
 import { Provider } from "react-redux";
 import store from "./app/store";
 import { BrowserRouter } from "react-router-dom";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import { DndProvider } from 'react-dnd-multi-backend';
+import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <DndProvider backend={HTML5Backend}>
+        <DndProvider options={HTML5toTouch}>
           <App />
         </DndProvider>
       </BrowserRouter>

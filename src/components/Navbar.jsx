@@ -73,22 +73,22 @@ export const Navbar = () => {
       <div className="flex h-16 w-full">
         <div className="flex-1 flex justify-start items-center text-[#2c4cbc] ml-5">
           <div
-            className="cursor-pointer border-2 w-20 h-12 text-xl font-medium flex justify-center items-center rounded-lg border-[#2c4cbc]"
+            className="cursor-pointer  w-20 h-12 text-xl font-medium flex justify-center items-center rounded-lg border-[#2c4cbc]"
             onClick={onLogoutClicked}
           >
             Logout
           </div>
         </div>
 
-        <div className="flex-1 flex text-4xl justify-center items-center text-[#2546bd] font-bold">
+        <div className="flex-1 flex text-4xl justify-center items-center text-[#2c4cbc] font-bold font-sriracha">
           Drello
         </div>
 
         <div className="flex-1 flex justify-end items-center">
-          <div className="flex mr-3 font-medium">{user.username}</div>
+          <div className="flex mr-3 font-medium text-[#2c4cbc]">{user.username}</div>
           <div className="flex pr-6">
             <AiOutlineEdit
-              className="w-10 h-8 text-[#2c4cbc] cursor-pointer border-2 border-[#2c4cbc] rounded-lg"
+              className="w-10 h-8 text-[#2c4cbc] cursor-pointer border-[#2c4cbc] rounded-lg"
               onClick={openModal}
             />
             <Modal

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import * as authApi from "../../api/authApi";
-import * as userApi from "../../api/userApi"
+import * as userApi from "../../api/userApi";
 
 export const createUser = createAsyncThunk("user/create", async (data) => {
   const res = await authApi.createUser(data);
@@ -13,9 +13,17 @@ export const loginUser = createAsyncThunk("user/login", async (data) => {
 });
 
 export const updateUser = createAsyncThunk("user/update", async (data) => {
-  console.log(data);
   const res = await userApi.updateUser(data.userData, data.token);
   return res.data;
+});
+
+export const getUser = createAsyncThunk("user/get", async (token) => {
+  const res = await userApi.getUser(token);
+  const payload = {
+    ...res.data,
+    token: token,
+  };
+  return payload;
 });
 
 export const userSlice = createSlice({
@@ -70,6 +78,15 @@ export const userSlice = createSlice({
       })
       .addCase(updateUser.rejected, (state, action) => {
         console.log(action.error);
+      });
+    builder
+      .addCase(getUser.fulfilled, (state, action) => {
+        console.log(action.payload);
+        state.user = action.payload;
+      })
+      .addCase(getUser.rejected, () => {
+        localStorage.clear();
+        location.reload();
       });
   },
 });

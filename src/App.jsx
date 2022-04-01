@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { setUserFromLocalStorage } from "./features/user/userSlice";
 import { useDispatch } from "react-redux";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import { getUser } from "./features/user/userSlice";
 
 const App = () => {
   const navigate = useNavigate();
@@ -14,8 +15,12 @@ const App = () => {
     const loggedInUser = localStorage.getItem("user");
     if (loggedInUser) {
       const foundUser = JSON.parse(loggedInUser);
-      dispatch(setUserFromLocalStorage(foundUser));
-      navigate(`/user/${foundUser.id}`);
+      try {
+        dispatch(getUser(foundUser.token));
+        navigate(`/user/${foundUser.id}`);
+      } catch (error) {
+        console.log(error);
+      }
     }
   }, []);
 

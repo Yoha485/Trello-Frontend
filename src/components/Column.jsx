@@ -94,7 +94,7 @@ export const Column = ({ id, colName, userToken }) => {
 
   return (
     <div
-      className="flex flex-col drop-shadow-lg border-2 w-50 min-h-[20rem] mx-5 rounded-xl mb-2"
+      className="flex flex-col drop-shadow-lg border-2 w-50 min-h-[20rem] mx-5 rounded-xl mb-2 overflow-auto"
       ref={drop}
     >
       <div>

@@ -99,7 +99,7 @@ export const Card = ({
   return (
     <div
       ref={drag}
-      className="border-2 m-2 min-h-[4rem] rounded-lg w-inherit max-w-[16rem]"
+      className="border-2 m-2 min-h-[4rem] rounded-lg w-inherit max-w-[16rem] "
     >
       <div>
         <div className="flex justify-end mr-2">

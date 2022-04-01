@@ -20,11 +20,11 @@ export const MainPage = () => {
   const columns = useSelector((state) => state.columns.columns);
   const columnsStatus = useSelector((state) => state.columns.status);
 
-  useEffect(() => {
-    if (!user || userId != user.id) {
-      navigate("/");
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   if (userId != user.id) {
+  //     navigate("/");
+  //   }
+  // }, [user]);
 
   useEffect(() => {
     if (user.token) {
@@ -52,7 +52,7 @@ export const MainPage = () => {
     <div>
       <Navbar />
 
-      <div className="flex flex-row">
+      <div className="flex flex-row overflow-auto">
         <div className="mt-24 flex fex-row">
           {sortedColumns.map((column) => (
             <Column

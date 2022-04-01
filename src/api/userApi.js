@@ -9,3 +9,10 @@ export const updateUser = (userData, token) =>
       Authorization: "Bearer " + token,
     },
   });
+
+export const getUser = (token) =>
+  axios.get(route, {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  });
