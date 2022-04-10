@@ -1,3 +1,3 @@
-const url = "http://localhost:4000";
+const url = "https://nestjs-trello.herokuapp.com";
 
 export default url;
