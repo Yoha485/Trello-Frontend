@@ -80,7 +80,7 @@ export const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex-1 flex text-4xl justify-center items-center text-[#2c4cbc] font-bold font-sriracha">
+        <div className="flex-1 flex text-4xl justify-center items-center text-[#233c8e] font-bold font-sriracha">
           Drello
         </div>
 

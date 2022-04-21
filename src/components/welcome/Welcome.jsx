@@ -39,7 +39,7 @@ const Welcome = () => {
   const onRegisterClicked = async () => {
     try {
       const res = await dispatch(createUser(values));
-      console.log(res)
+      console.log(res);
       navigate(`/user/${res.payload.user.id}`);
     } catch (error) {
       console.error(error.message);
@@ -62,9 +62,9 @@ const Welcome = () => {
   return (
     <div className="flex flex-col tablet:flex-row items-center justify-center h-screen">
       <div className="pr-7">
-        <h1 className="text-3xl sm:text-5xl">
+        <h1 className="font-semibold text-3xl sm:text-5xl">
           Plan your life <br /> with{" "}
-          <span className="text-[#2546bd]">Drello</span>
+          <span className="text-[#233c8e]">Drello</span>
         </h1>
         <p className="text-gray-500">
           Create, process and complete your tasks <br /> in a convenient way
@@ -76,16 +76,17 @@ const Welcome = () => {
           <div className="cursor-pointer text-gray-900">
             <button
               onClick={() => setRegisterFormSwitch(true)}
-              className="text-white"
+              className="text-white font-semibold"
             >
               Register
-            </button>
-            /
+            </button>{" "}
+            /{" "}
             <button
               onClick={() => {
                 setRegisterFormSwitch(false);
                 clearValues();
               }}
+              className = "font-semibold"
             >
               Login
             </button>
@@ -96,14 +97,16 @@ const Welcome = () => {
               onClick={() => {
                 setRegisterFormSwitch(true);
                 clearValues();
+                
               }}
+              className="font-semibold"
             >
               Register
-            </button>
-            /
+            </button>{" "}
+            /{" "}
             <button
               onClick={() => setRegisterFormSwitch(false)}
-              className="text-white"
+              className="text-white font-semibold"
             >
               Login
             </button>
@@ -141,19 +144,19 @@ const Welcome = () => {
         <div className="h-[1px] w-full bg-gray-400 my-2" />
 
         <div className="flex flex-row w-full h-full">
-          <p className="flex-1 text-[#b90c1c]">{formError}</p>
+          <p className="flex-1 text-white">{formError}</p>
 
           <button className="flex-1 flex justify-end text-white cursor-pointer w-full pt-2">
             {registerFormSwitch ? (
               <div
-                className="w-20 h-8 border-2 border-white rounded-lg"
+                className="w-20 h-8 pt-1 bg-white text-black font-semibold rounded-lg"
                 onClick={onRegisterClicked}
               >
                 Register
               </div>
             ) : (
               <div
-                className="w-20 h-8 border-2 border-white rounded-lg"
+                className="w-20 h-8 pt-1 bg-white text-black font-semibold rounded-lg"
                 onClick={onLoginClicked}
               >
                 Login
